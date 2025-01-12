@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: pink;
+    padding: 10px;
+
+    .navbar-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        font-size: 16px;
+        gap: 30px;
+        & a {
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #000000;
+            &:hover {
+                text-decoration: underline;
+            }
+            &.active {
+                text-decoration: underline;
+                color: #000000;
+            }
+        }
+    }
+}
+
