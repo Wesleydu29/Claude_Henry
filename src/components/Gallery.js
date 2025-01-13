@@ -13,7 +13,8 @@ function Gallery() {
                 <h2>En quoi l'hypnose peut elle m'aider ?</h2>
             </div>
             <div className="gallery">
-                <Card src={cigarette} title="Stoppez le tabac"/>
+                <Card src={cigarette} title="Stoppez le tabac"
+                content="voici le contenu"/>
                 <Card src={stress} title="Gérez vos émotions"/>
                 <Card src={sommeil} title="Apprenez à mieux dormir"/>
                 <Card src={phobie} title="Combattez vos phobies"/>
