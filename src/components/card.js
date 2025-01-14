@@ -14,6 +14,9 @@ function Card(props) {
                 <div className="card-back">
                     <h3>Plus d'informations</h3>
                     <p>{props.content}</p>
+                    <div>
+                        <a>Contactez moi</a>
+                    </div>
                 </div>
             </div>
         </div>

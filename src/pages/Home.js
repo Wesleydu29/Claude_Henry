@@ -1,12 +1,13 @@
-
-import Summary from "../components/Summary";
+import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
+import banner from '../assets/banner.jpg'
 
 
 function Home(){
     return(
         <div>
-            <Summary/>
+            <Banner src={banner}/>
+            
             <Gallery/>
         </div>
     );

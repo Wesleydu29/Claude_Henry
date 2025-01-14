@@ -14,7 +14,8 @@ function Gallery() {
             </div>
             <div className="gallery">
                 <Card src={cigarette} title="Stoppez le tabac"
-                content="voici le contenu"/>
+                content="Vous souhaitez arrêter votre consommation de tabac ? L'hypnose est un outil très puissant qui va vous y aider. 
+                ALors n'hésitez plus et prenez rendez-vous "/>
                 <Card src={stress} title="Gérez vos émotions"/>
                 <Card src={sommeil} title="Apprenez à mieux dormir"/>
                 <Card src={phobie} title="Combattez vos phobies"/>
