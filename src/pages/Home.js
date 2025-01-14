@@ -1,12 +1,12 @@
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
-import banner from '../assets/banner.jpg'
+import colline from '../assets/colline.jpg'
 
 
 function Home(){
     return(
         <div>
-            <Banner src={banner}/>
+            <Banner src={colline}/>
             
             <Gallery/>
         </div>
