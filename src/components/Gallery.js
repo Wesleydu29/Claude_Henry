@@ -9,17 +9,18 @@ import bonbon from '../assets/bonbon.jpg'
 function Gallery() {
     return(
         <div className="gallery-container">
-            <div>
-                <h2>En quoi l'hypnose peut elle m'aider ?</h2>
+            <div className="gallery-title">
+                <h2>Qu'est-ce que l'hypnose</h2>
+                <p> Découvrez sur quoi l'hypnose peut vous aider</p>
             </div>
             <div className="gallery">
                 <Card src={cigarette} title="Stoppez le tabac"
                 content="Vous souhaitez arrêter votre consommation de tabac ? L'hypnose est un outil très puissant qui va vous y aider. 
-                ALors n'hésitez plus et prenez rendez-vous "/>
-                <Card src={stress} title="Gérez vos émotions"/>
-                <Card src={sommeil} title="Apprenez à mieux dormir"/>
-                <Card src={phobie} title="Combattez vos phobies"/>
-                <Card src={bonbon} title="Comportements addictifs"/>
+                ALors n'hésitez plus et prenez rendez-vous " color="#F5C5FF"/>
+                <Card src={stress} title="Gérez vos émotions" color="#EC976A"/>
+                <Card src={sommeil} title="Apprenez à mieux dormir" color="#AED7FF"/>
+                <Card src={phobie} title="Combattez vos phobies" color="#5BBAAD"/>
+                <Card src={bonbon} title="Comportements addictifs" color="#CB7FA5"/>
             </div>
         </div>
     );

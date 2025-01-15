@@ -11,7 +11,7 @@ function Card(props) {
                         <p>découvrir</p>
                     </div>
                 </div>
-                <div className="card-back">
+                <div className="card-back" style={{backgroundColor: props.color}}>
                     <h3>Plus d'informations</h3>
                     <p>{props.content}</p>
                     <div>
