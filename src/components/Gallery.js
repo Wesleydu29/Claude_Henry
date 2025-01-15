@@ -10,7 +10,7 @@ function Gallery() {
     return(
         <div className="gallery-container">
             <div className="gallery-title">
-                <h2>Qu'est-ce que l'hypnose</h2>
+                <h2>Qu'est-ce que l'hypnose ?</h2>
                 <p> Découvrez sur quoi l'hypnose peut vous aider</p>
             </div>
             <div className="gallery">
