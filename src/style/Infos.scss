@@ -1,0 +1,19 @@
+.infos-content {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    .phone, .mail, .localisation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    i {
+        font-size: 20px;
+    }
+    
+}
