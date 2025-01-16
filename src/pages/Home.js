@@ -1,13 +1,13 @@
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
-import colline from '../assets/colline.jpg'
 import Summary from "../components/Summary";
+import banner1 from "../assets/banner1.jpg"
 
 
 function Home(){
     return(
         <div>
-            <Banner src={colline}/>
+            <Banner  title="Claude Henry" content="Hypnopraticien" backgroundImage={banner1}/>
             <Gallery/>
             <Summary/>
         </div>

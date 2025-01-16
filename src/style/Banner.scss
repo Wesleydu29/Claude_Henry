@@ -1,8 +1,7 @@
 
 /* Style de la section avec effet parallax */
 .parallax-container {
-    height: 400px; /* Prend toute la hauteur de la fenêtre */
-    background-image: url('../assets/banner1.jpg'); /* Image de fond */
+    height: 350px; /* Prend toute la hauteur de la fenêtre */
     background-attachment: fixed; /* Fixe l'image de fond par rapport à la fenêtre */
     background-position: center;
     background-repeat: no-repeat;

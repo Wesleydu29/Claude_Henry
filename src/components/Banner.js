@@ -1,11 +1,11 @@
 import '../style/Banner.scss'
 
-function Banner() {
+function Banner({ backgroundImage, title, content }) {
     return(
-        <div class="parallax-container">
-            <div class="parallax-content">
-                <h2> Claude Henry</h2>
-                <p>Hypnopraticien</p>
+        <div className="parallax-container" style={{ backgroundImage: `url(${backgroundImage})` }}>
+            <div className="parallax-content">
+                <h2>{title}</h2>
+                <p>{content}</p>
             </div>
         </div>
     );
