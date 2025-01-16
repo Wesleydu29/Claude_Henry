@@ -1,12 +1,12 @@
 import Infos from "../components/Infos";
 import Banner from "../components/Banner";
-import bannerImage from "../assets/banner.jpg"
+import montagne from "../assets/montagne.jpg"
 
 function Contact() {
     return(
         <div>
             <Infos/>
-            <Banner backgroundImage={bannerImage}/>
+            <Banner backgroundImage={montagne}/>
 
         </div>
     );

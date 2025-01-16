@@ -8,7 +8,7 @@ function Header() {
         <nav>
             <h1>Claude Henry - Hypnopraticien</h1>
             <div className="navbar-link">
-                <NavLink to="/">Acceuil</NavLink>
+                <NavLink to="/">Accueil</NavLink>
                 <NavLink to="/Contact">Contact</NavLink>
                 <NavLink to="/LearnMore">En savoir plus</NavLink>
             </div>

@@ -13,16 +13,18 @@ nav {
         font-size: 16px;
         gap: 30px;
         & a {
+            padding: 5px;
             font-size: 20px;
             font-weight: 500;
+            border-radius: 5px;
             text-decoration: none;
             color: #000000;
             &:hover {
                 text-decoration: underline;
             }
             &.active {
-                text-decoration: underline;
-                color: #000000;
+                background-color: #5BBAAD;
+                color: white;
             }
         }
     }
