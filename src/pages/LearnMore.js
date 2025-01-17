@@ -1,10 +1,9 @@
-import Summary from "../components/Summary";
 
 function LearnMore() {
     return(
         <div>
+            <h2> En savoir plus</h2>
             
-
         </div>
     );
 };
