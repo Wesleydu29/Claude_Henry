@@ -1,5 +1,5 @@
 
-function LearnMore() {
+function AboutMe() {
     return(
         <div>
             <h2> En savoir plus</h2>
@@ -8,4 +8,4 @@ function LearnMore() {
     );
 };
 
-export default LearnMore;
+export default AboutMe;
