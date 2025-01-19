@@ -21,7 +21,7 @@ function Header() {
                 <NavLink to="/">Accueil</NavLink>
                 <NavLink to="/Contact">Contact</NavLink>
                 <div className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <a  href='#'>En savoir plus</a>
+                    <p>En savoir plus</p>
                     {showDropDown && (
                         <div className="dropdown-menu">
                             <NavLink to="/AboutMe"> À propos de moi</NavLink>
