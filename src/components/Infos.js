@@ -17,6 +17,17 @@ function Infos() {
                     <i class="fa-solid fa-house"></i>
                     <p>Linguennec 29140 Saint Yvy</p>
                 </div>
+                <div className="opening">
+                    <div>
+                        <h3>heures d'ouverture</h3>
+                        <p>Du lundi au samedi, de 9h à 18h</p>
+                    </div>
+                    <div>
+                        <p>Consultation au cabinet et à domicile</p>
+                    </div>
+                    
+
+                </div>
                 
             </div>
         </div>
