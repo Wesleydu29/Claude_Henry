@@ -21,12 +21,16 @@ function Infos() {
                     <div>
                         <h3>heures d'ouverture</h3>
                         <p>Du lundi au samedi, de 9h à 18h</p>
-                    </div>
-                    <div>
                         <p>Consultation au cabinet et à domicile</p>
                     </div>
-                    
+                    <div>
+                        <h3>Tarifs</h3>
 
+                    </div>
+                    <div className='map'>
+                       <iframe width="720" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Linguennec%2029140%20Saint%20Yvy+(cabinet%20Claude%20Henry)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>
+                        
+                    </div>
                 </div>
                 
             </div>

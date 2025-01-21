@@ -5,8 +5,9 @@ import montagne from "../assets/montagne.jpg"
 function Contact() {
     return(
         <div>
-            <Infos/>
             <Banner backgroundImage={montagne}/>
+            <Infos/>
+            
 
         </div>
     );
