@@ -42,7 +42,7 @@
         width: 100%;
         background-color: white;
         opacity: 0.8;
-        color: #000;
+        color: #000000;
         padding: 10px;
         text-align: center;
       }
@@ -55,6 +55,14 @@
       align-items: center;
       text-align: center;
       transform: rotateY(180deg); // Prépare la face arrière pour l'inversion
+      & a {
+        color: #000000;
+
+      }
+      .cardback-content {
+        padding: 5px;
+        color: #000000;
+      }
     }
   }
   

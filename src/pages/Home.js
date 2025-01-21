@@ -9,7 +9,6 @@ function Home(){
         <div>
             <Banner  title="Claude Henry" content="Hypnopraticien" backgroundImage={banner1}/>
             <Gallery/>
-            <Summary/>
         </div>
     );
 };

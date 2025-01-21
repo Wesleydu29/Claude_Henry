@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../style/Card.scss'
 
 function Card(props) {
@@ -13,9 +14,11 @@ function Card(props) {
                 </div>
                 <div className="card-back" style={{backgroundColor: props.color}}>
                     <h3>Plus d'informations</h3>
-                    <p>{props.content}</p>
+                    <div className="cardback-content">
+                        <p>{props.content}</p>
+                    </div>
                     <div>
-                        <a>Contactez moi</a>
+                        <NavLink to="/Contact">Contactez moi</NavLink>
                     </div>
                 </div>
             </div>
