@@ -25,7 +25,7 @@ function Header() {
                     {showDropDown && (
                         <div className="dropdown-menu">
                             <NavLink to="/AboutMe"> À propos de moi</NavLink>
-                            <a href='#'>Tarifs</a>
+                            <a href='#' id="tarifs">Tarifs</a>
                         </div>
                     )}
 

@@ -2,7 +2,7 @@ import '../style/Infos.scss'
 
 function Infos() {
     return(
-        <div>
+        <div className='infos'>
             <h2>Contactez moi ! </h2>
             <div className="infos-content">
                 <div class="phone">
