@@ -1,7 +1,7 @@
 
 import Summary from "../components/Summary";
 
-function AboutMe() {
+function APropos() {
     return(
         <div>
             <h2> En savoir plus</h2>
@@ -12,4 +12,4 @@ function AboutMe() {
     );
 };
 
-export default AboutMe;
+export default APropos;
