@@ -13,10 +13,20 @@ function Gallery() {
         <div className="gallery-container">
             <div className="gallery-title">
                 <h2>Qu'est-ce que l'hypnose ?</h2>
-                <p>L’hypnothérapie est une approche thérapeutique qui utilise l’état d’hypnose pour aider une personne à accéder à son inconscient dans le but de résoudre des problèmes psychologiques, 
-                    émotionnels ou physiques. L’hypnose est un état modifié de conscience, 
-                    souvent décrit comme un état de relaxation profonde et de concentration accrue, dans lequel l’individu devient plus réceptif aux suggestions.</p>
-                <p> Découvrez sur quoi l'hypnose peut vous aider</p>
+                <p>Il s'agit d'un phénomène naturel, un état particulier de conscience, que chacun d'entre nous pratique à un moment
+                    ou à un autre de manière inconsciente : c'est un état de conscience modifié.
+                </p>
+                <p>- Selon Jean GODIN psychiatre : "L'hypnose est un mode de fonctionnement psychologique, dans lequel le sujet, grâce
+                    à l'intervention d'une autre personne, parvient à faire abstraction de la réalité environnante, tout en restant en relation avec
+                    l'accompagnateur. "
+                </p>
+                <p>
+                    - D'après Antoine BIOY, psychologue : " 1. Un état de conscience modifié : une activation cortical particulière
+                    et un phénomène de dissociation psychique. <br></br> 2. Une relation intersubjective particulière : Une modalité relationnelle, une
+                    communication particulière et un lien intersubjectif singulier."
+                </p>
+
+                <h2> Découvrez sur quoi l'hypnose peut vous aider</h2>
             </div>
             <div className="gallery">
                 <Card src={cigarette} title="Stoppez le tabac"

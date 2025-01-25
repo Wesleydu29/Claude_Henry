@@ -45,9 +45,7 @@ function Header() {
                             <NavLink onClick={openDialog}>Tarifs</NavLink>
                         </div>
                     )}
-
                 </div>
-                
             </div>
             <div>
                 <dialog ref={dialogRef}>
