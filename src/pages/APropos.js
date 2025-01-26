@@ -19,6 +19,8 @@ function APropos() {
                 </p>
                 <p>
                     Comme décrit sur la page <NavLink to="/">d'accueil</NavLink>, je peux vous aider dans différents domaines <br/>
+                </p>
+                <p>
                     - La prise en charge de la douleur, de l'anxiété.<br/>
                     - L'amélioration de l'estime de soi, de la confiance en soi.<br/>
                     - La réduction des phobies.<br/>

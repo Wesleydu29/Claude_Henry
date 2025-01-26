@@ -8,7 +8,6 @@ function Home(){
         <div>
             <Banner  title="Claude Henry" content="Hypnopraticien" backgroundImage={banner1}/>
             <Gallery/>
-            <h2><a>Découvrez mes tarifs</a></h2>
         </div>
     );
 };

@@ -31,12 +31,19 @@ function Gallery() {
             <div className="gallery">
                 <Card src={cigarette} title="Stoppez le tabac"
                 content="Pour l'arrêt du tabac, cela se déroulera en 2 séances, à domicile ou en cabinet. " color="#F5C5FF"/>
-                <Card src={stress} title="Gérez vos émotions" content="L'hypnose permet d'apprendre à apprendre à lâcher prise et à lâcher le besoin de contrôler, tout cela de façon simple et naturelle. " color="#EC976A"/>
-                <Card src={sommeil} title="Apprenez à mieux dormir" content="Des difficultés à s'endormir ? Sommeil décalé ? L'hypnose vous aidera à travailler sur ce qui vous empêche de dormir." color="#AED7FF"/>
-                <Card src={phobie} title="Combattez vos phobies" content="Lors d'une peur ou d'une crise d'angoisse, le corps réagit avec des symptômes physiques (palpitations, sueurs, tremblements). Sous hypnose, on peut apprendre à contrôler ces réactions par des techniques de relaxation profonde, réduisant ainsi l'intensité des crises." color="#5BBAAD"/>
-                <Card src={bonbon} title="Comportement alimentaire" content="Je vous accompagne dans votre combat contre les troubles du comportement alimentaire (TCA)." color="#CB7FA5"/>
-                <Card src={douleur} title="Gestion de la douleur"  content="Grâce à l'hypnose, je soigne la douleur chronique, musculaire ainsi que les migraines." color="#E5E9A0"/>
-                <Card src={femme_souriante} title="Reprennez confiance en vous" content="Retrouvez confiance en vous grâce à l'hypnose, car elle agit directement sur l'inconscient, là où se logent de nombreuses croyances limitantes et peurs irrationnelles " color="#DAA49A"/>
+                <Card src={stress} title="Gérez vos émotions" 
+                content="L'hypnose permet d'apprendre à apprendre à lâcher prise et à lâcher le besoin de contrôler, tout cela de façon simple et naturelle. " color="#EC976A"/>
+                <Card src={sommeil} title="Apprenez à mieux dormir" 
+                content="Des difficultés à s'endormir ? Sommeil décalé ? L'hypnose vous aidera à travailler sur ce qui vous empêche de dormir." color="#AED7FF"/>
+                <Card src={phobie} title="Combattez vos phobies" 
+                content="Lors d'une peur ou d'une crise d'angoisse, le corps réagit avec des symptômes physiques (palpitations, sueurs, tremblements). 
+                Sous hypnose, on peut apprendre à contrôler ces réactions par des techniques de relaxation profonde, réduisant ainsi l'intensité des crises." color="#5BBAAD"/>
+                <Card src={bonbon} title="Comportement alimentaire" 
+                content="Je vous accompagne dans votre combat contre les troubles du comportement alimentaire (TCA)." color="#CB7FA5"/>
+                <Card src={douleur} title="Gestion de la douleur"  
+                content="Grâce à l'hypnose, je soigne la douleur chronique, musculaire ainsi que les migraines." color="#E5E9A0"/>
+                <Card src={femme_souriante} title="Reprennez confiance en vous" 
+                content="Retrouvez confiance en vous grâce à l'hypnose, car elle agit directement sur l'inconscient, là où se logent de nombreuses croyances limitantes et peurs irrationnelles " color="#DAA49A"/>
             </div>
         </div>
     );

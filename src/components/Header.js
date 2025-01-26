@@ -32,29 +32,31 @@ function Header() {
 
     
     return(
-        <nav>
-            <h1>Claude Henry - Hypnopraticien</h1>
-            <div className="navbar-link">
-                <NavLink to="/">Accueil</NavLink>
-                <NavLink to="/Contact">Contact</NavLink>
-                <div className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <p>En savoir plus</p>
-                    {showDropDown && (
-                        <div className="dropdown-menu">
-                            <NavLink to="/APropos"> À propos de moi</NavLink>
-                            <NavLink onClick={openDialog}>Tarifs</NavLink>
-                        </div>
-                    )}
+        <>
+            <nav>
+                <h1>Claude Henry - Hypnopraticien</h1>
+                <div className="navbar-link">
+                    <NavLink to="/">Accueil</NavLink>
+                    <NavLink to="/Contact">Contact</NavLink>
+                    <div className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                        <p>En savoir plus</p>
+                        {showDropDown && (
+                            <div className="dropdown-menu">
+                                <NavLink to="/APropos" className={({isActive}) => (isActive ? 'active' : '')}> À propos de moi</NavLink>
+                                <p onClick={openDialog} className={({isActive}) => (isActive ? 'active' : '')} >Tarifs</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <dialog ref={dialogRef}>
+            </nav>
+            <dialog ref={dialogRef}>
+                <div className='dialog-content'>
                     <p>Consultation au cabinet, 50€ la séance d'une durée, pouvant varier de 45 minutes à 1h30</p>
                     <p>Consultation à domicile, 60€ la séance d'une durée, pouvant varier de 45 minutes à 1h30</p>
                     <button onClick={closeDialog}>Fermer</button>
-                </dialog>
-            </div>
-        </nav>
+                </div>
+            </dialog>
+        </>
     );
 };
 
