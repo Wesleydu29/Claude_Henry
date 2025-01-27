@@ -42,7 +42,7 @@ function Gallery() {
                 content="Je vous accompagne dans votre combat contre les troubles du comportement alimentaire (TCA)." color="#CB7FA5"/>
                 <Card src={douleur} title="Gestion de la douleur"  
                 content="Grâce à l'hypnose, je soigne la douleur chronique, musculaire ainsi que les migraines." color="#E5E9A0"/>
-                <Card src={femme_souriante} title="Reprennez confiance en vous" 
+                <Card src={femme_souriante} title="Reprenez confiance en vous" 
                 content="Retrouvez confiance en vous grâce à l'hypnose, car elle agit directement sur l'inconscient, là où se logent de nombreuses croyances limitantes et peurs irrationnelles " color="#DAA49A"/>
             </div>
         </div>
