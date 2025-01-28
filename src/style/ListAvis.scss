@@ -1,0 +1,37 @@
+.liste-avis {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #AED7FF;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .avis-item {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+
+        h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        small {
+            font-size: 12px;
+            color: #777;
+        }
+    }
+}

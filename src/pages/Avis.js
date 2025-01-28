@@ -1,11 +1,13 @@
+import AvisForm from "../components/AvisForm";
 
-
-function laisserUnAvis() {
+function Avis() {
     return(
         <>
-        <h2> Votre séance s'est bien passée ? Laisser un avis !</h2>
+        <h2>Satisfait(e) de votre séance ? Laissez un avis</h2>
+        <AvisForm/>
+        
         </>
     );
 }
 
-export default laisserUnAvis;
+export default Avis;
