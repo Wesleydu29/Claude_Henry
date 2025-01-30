@@ -1,13 +1,14 @@
 
 import { NavLink } from "react-router-dom";
 import Summary from "../components/Summary";
+import profil from '../assets/profil.webp'
 import '../style/Apropos.scss'
 
 function APropos() {
     return(
         <div>
             <h2> En savoir plus</h2>
-            <Summary/>
+            <Summary src={profil} alt="portrait de Claude Henry"/>
             <div className="summary-content">
                 <h3>Comment puis-je vous aider avec l'hypnose médicale ?</h3>
                 <p>Je pratique l'hypnose Ericksonnienne du nom de son créateur Milton Ericksonne. Elle consite à développer les ressources

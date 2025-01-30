@@ -1,10 +1,10 @@
-import profil from '../assets/profil.jpg'
+
 import '../style/Summary.scss'
 
-function Summary() {
+function Summary({src, alt}) {
     return(
         <div className="presenting">
-            <img src={profil}></img>
+            <img src={src} alt={alt} loading='lazy'></img>
             <p>Bonjour,
                 je m'appelle Claude HENRY. Je possède une<strong> solide expérience de soignant depuis 28 ans</strong>. 
                 Je suis titulaire d'un diplôme inter universitaire d'hypnose médicale et clinique ainsi qu'un diplôme universitaire

@@ -1,21 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import '../style/Card.scss'
 
-function Card(props) {
+function Card({ src, title, alt, content, color }) {
     return(
         <div className="card">
             <div className="card-inner">
                 <div className="card-front">
-                    <img src={props.src}></img>
+                    <img src={src} alt={alt} loading='lazy'></img>
                     <div className="card-content">
-                        <h3>{props.title}</h3>
+                        <h3>{title}</h3>
                         <p>découvrir</p>
                     </div>
                 </div>
-                <div className="card-back" style={{backgroundColor: props.color}}>
+                <div className="card-back" style={{backgroundColor: color}}>
                     <h3>Plus d'informations</h3>
                     <div className="cardback-content">
-                        <p>{props.content}</p>
+                        <p>{content}</p>
                     </div>
                     <div>
                         <NavLink to="/Contact">Contactez moi</NavLink>
