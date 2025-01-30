@@ -29,21 +29,22 @@ function Gallery() {
                 <h2> Découvrez sur quoi l'hypnose peut vous aider</h2>
             </div>
             <div className="gallery">
-                <Card src={cigarette} title="Stoppez le tabac"
-                content="Pour l'arrêt du tabac, cela se déroulera en 2 séances, à domicile ou en cabinet. " color="#F5C5FF"/>
+                <Card src={cigarette} title="Contrôlez vos addictions"
+                content="Pour l'arrêt de vos addictions (tabac, alcool etc..), cela se déroulera en plusieurs séances, à domicile ou en cabinet. " color="#F5C5FF"/>
                 <Card src={stress} title="Gérez vos émotions" 
-                content="L'hypnose permet d'apprendre à apprendre à lâcher prise et à lâcher le besoin de contrôler, tout cela de façon simple et naturelle. " color="#EC976A"/>
+                content="L'hypnose vous permet de gérer vos émotions comme l'anxiété, l'angoisse et le stress. " color="#EC976A"/>
                 <Card src={sommeil} title="Apprenez à mieux dormir" 
-                content="Des difficultés à s'endormir ? Sommeil décalé ? L'hypnose vous aidera à travailler sur ce qui vous empêche de dormir." color="#AED7FF"/>
-                <Card src={phobie} title="Combattez vos phobies" 
-                content="Lors d'une peur ou d'une crise d'angoisse, le corps réagit avec des symptômes physiques (palpitations, sueurs, tremblements). 
-                Sous hypnose, on peut apprendre à contrôler ces réactions par des techniques de relaxation profonde, réduisant ainsi l'intensité des crises." color="#5BBAAD"/>
+                content="Des difficultés à s'endormir ? Sommeil décalé ? Apprenez à retrouver un sommeil de meilleure qualité avec l'hypnose et l'autohypnose." color="#AED7FF"/>
+                <Card src={phobie} title="Traitez vos phobies" 
+                content="Une phobie va créer une peur ou une crise d'angoisse, le corps réagit avec des symptômes physiques (palpitations, sueurs, tremblements).
+                sous hypnose, je peux vous apprendre à contrôler ces réactions par des techniques adaptées et personnalisées réduisant ainsi l'intensité des crises." color="#5BBAAD"/>
                 <Card src={bonbon} title="Comportement alimentaire" 
-                content="Je vous accompagne dans votre combat contre les troubles du comportement alimentaire (TCA)." color="#CB7FA5"/>
+                content="L'hypnose permet de vous aider à réguler vos émotions, votre appétit." color="#CB7FA5"/>
                 <Card src={douleur} title="Gestion de la douleur"  
-                content="Grâce à l'hypnose, je soigne la douleur chronique, musculaire ainsi que les migraines." color="#E5E9A0"/>
-                <Card src={femme_souriante} title="Reprenez confiance en vous" 
-                content="Retrouvez confiance en vous grâce à l'hypnose, car elle agit directement sur l'inconscient, là où se logent de nombreuses croyances limitantes et peurs irrationnelles " color="#DAA49A"/>
+                content="La douleur est une sensation et une émotion. Grâce à la pratique de l'hypnose et de l'autohypnose je peux vous aider à réduire celle-ci." color="#E5E9A0"/>
+                <Card src={femme_souriante} title="Reprise de la confiance en soi" 
+                content="L'hypnose ericksonienne permet l'utilisation de vos ressources inconscientes pour vous aider à aller de l'avant, à prendre conscience de ses forces pour avoir une meilleure estime de soi.
+                " color="#DAA49A"/>
             </div>
         </div>
     );
