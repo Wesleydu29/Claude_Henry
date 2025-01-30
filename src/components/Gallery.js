@@ -1,12 +1,12 @@
 import Card from "./card"
 import '../style/Gallery.scss'
-import cigarette from '../assets/cigarette.jpg'
-import stress from '../assets/stress.jpg'
+import addictions from '../assets/addictions.jpg'
 import sommeil from '../assets/sommeil.jpg'
 import phobie from '../assets/phobie.png'
 import bonbon from '../assets/bonbon.jpg'
 import douleur from '../assets/douleur.jpg'
 import femme_souriante from '../assets/femme_souriante.jpg'
+import Munch from '../assets/Edvard_Munch.jpg'
 
 function Gallery() {
     return(
@@ -29,9 +29,9 @@ function Gallery() {
                 <h2> Découvrez sur quoi l'hypnose peut vous aider</h2>
             </div>
             <div className="gallery">
-                <Card src={cigarette} title="Contrôlez vos addictions"
+                <Card src={addictions} title="Contrôlez vos addictions"
                 content="Pour l'arrêt de vos addictions (tabac, alcool etc..), cela se déroulera en plusieurs séances, à domicile ou en cabinet. " color="#F5C5FF"/>
-                <Card src={stress} title="Gérez vos émotions" 
+                <Card src={Munch} title="Gérez vos émotions" 
                 content="L'hypnose vous permet de gérer vos émotions comme l'anxiété, l'angoisse et le stress. " color="#EC976A"/>
                 <Card src={sommeil} title="Apprenez à mieux dormir" 
                 content="Des difficultés à s'endormir ? Sommeil décalé ? Apprenez à retrouver un sommeil de meilleure qualité avec l'hypnose et l'autohypnose." color="#AED7FF"/>

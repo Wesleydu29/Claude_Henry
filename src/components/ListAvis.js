@@ -28,6 +28,18 @@ function ListeAvis() {
         }
     };
 
+    // Fonction pour supprimer un avis
+    const handleDelete = (index) => {
+        // Crée une nouvelle liste d'avis sans celui supprimé
+        const updatedAvisList = avisList.filter((_, i) => i !== index);
+
+        // Met à jour le state avec la nouvelle liste
+        setAvisList(updatedAvisList);
+
+        // Enregistre la nouvelle liste dans le localStorage
+        localStorage.setItem('avis', JSON.stringify(updatedAvisList));
+    };
+
     return (
         <div className="liste-avis">
             <h2>Avis de mes clients ({avisList.length} avis)</h2>
@@ -43,6 +55,13 @@ function ListeAvis() {
                                 <p>Note : {avis.note} étoiles</p>
                                 <p>{avis.avis}</p>
                                 <p><small>Publié le {avis.date}</small></p>
+
+                                <button 
+                                    onClick={() => handleDelete(index)} 
+                                    className="delete-btn"
+                                >
+                                    Supprimer
+                                </button>
                             </li>
                         ))}
                     </ul>

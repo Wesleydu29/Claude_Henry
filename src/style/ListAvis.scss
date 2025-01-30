@@ -54,5 +54,20 @@
         background-color: #d6d6d6;
         cursor: not-allowed;
     }
+    .delete-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .delete-btn:hover {
+        background-color: darkred;
+    }
+    
     
 }
