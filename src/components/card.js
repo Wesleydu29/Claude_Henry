@@ -6,7 +6,7 @@ function Card({ src, title, alt, content, color }) {
         <div className="card">
             <div className="card-inner">
                 <div className="card-front">
-                    <img src={src} alt={alt} loading='lazy'></img>
+                    <img src={src} alt={alt}></img>
                     <div className="card-content">
                         <h3>{title}</h3>
                         <p>découvrir</p>

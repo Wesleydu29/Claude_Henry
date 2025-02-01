@@ -9,7 +9,12 @@ function ListeAvis() {
     // Charger les avis du localStorage à chaque chargement de la page
     useEffect(() => {
         const storedAvis = JSON.parse(localStorage.getItem('avis')) || [];
-        setAvisList(storedAvis);
+        
+
+        // Trier les avis par date (du plus récent au plus ancien)
+        const sortedAvis = storedAvis.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        setAvisList(sortedAvis);
     }, []);
 
     // Calculer les avis à afficher pour la page actuelle
@@ -28,7 +33,7 @@ function ListeAvis() {
         }
     };
 
-    // Fonction pour supprimer un avis
+    /* // Fonction pour supprimer un avis
     const handleDelete = (index) => {
         // Crée une nouvelle liste d'avis sans celui supprimé
         const updatedAvisList = avisList.filter((_, i) => i !== index);
@@ -38,7 +43,7 @@ function ListeAvis() {
 
         // Enregistre la nouvelle liste dans le localStorage
         localStorage.setItem('avis', JSON.stringify(updatedAvisList));
-    };
+    }; */
 
     return (
         <div className="liste-avis">
@@ -56,12 +61,12 @@ function ListeAvis() {
                                 <p>{avis.avis}</p>
                                 <p><small>Publié le {avis.date}</small></p>
 
-                                <button 
+                                {/* <button 
                                     onClick={() => handleDelete(index)} 
                                     className="delete-btn"
                                 >
                                     Supprimer
-                                </button>
+                                </button> */}
                             </li>
                         ))}
                     </ul>

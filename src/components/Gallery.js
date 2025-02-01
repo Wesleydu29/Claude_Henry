@@ -16,13 +16,13 @@ function Gallery() {
                 <p>Il s'agit d'un phénomène naturel, un état particulier de conscience, que chacun d'entre nous pratique à un moment
                     ou à un autre de manière inconsciente : c'est un état de conscience modifié.
                 </p>
-                <p>- Selon Jean GODIN psychiatre : "L'hypnose est un mode de fonctionnement psychologique, dans lequel le sujet, grâce
+                <p>- Selon Jean GODIN, psychiatre : "L'hypnose est un mode de fonctionnement psychologique, dans lequel le sujet, grâce
                     à l'intervention d'une autre personne, parvient à faire abstraction de la réalité environnante, tout en restant en relation avec
                     l'accompagnateur. "
                 </p>
                 <p>
                     - D'après Antoine BIOY, psychologue : " 1. Un état de conscience modifié : une activation cortical particulière
-                    et un phénomène de dissociation psychique. <br></br> 2. Une relation intersubjective particulière : Une modalité relationnelle, une
+                    et un phénomène de dissociation psychique. 2. Une relation intersubjective particulière : Une modalité relationnelle, une
                     communication particulière et un lien intersubjectif singulier."
                 </p>
 

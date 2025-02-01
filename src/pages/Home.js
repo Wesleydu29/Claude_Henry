@@ -1,6 +1,6 @@
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
-import banner1 from "../assets/banner1.webp"
+import plage from "../assets/photo_plage.jpg"
 import ScrollToTop from "../components/ScrollBtn";
 import ListeAvis from "../components/ListAvis";
 
@@ -8,7 +8,7 @@ import ListeAvis from "../components/ListAvis";
 function Home(){
     return(
         <div>
-            <Banner  title="Claude Henry" content="Hypnopraticien" backgroundImage={banner1} alt="image de gallets"/>
+            <Banner  title="Claude Henry" content="Hypnopraticien" backgroundImage={plage} alt="image de gallets"/>
             <Gallery/>
             <ListeAvis/>
             <ScrollToTop/>
