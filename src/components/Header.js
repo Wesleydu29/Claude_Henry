@@ -1,7 +1,7 @@
 import '../style/Header.scss';
 import { NavLink } from "react-router-dom";
 import { useState, useRef } from 'react';
-import { Menu, X } from "lucide-react"; // Optionnel : icônes élégantes
+import { Menu, X } from "lucide-react";
 
 function Header() {
     const [showDropDown, setShowDropDown] = useState(false);
@@ -20,24 +20,29 @@ function Header() {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-
     return (
         <>
             <nav>
                 <h1>Claude Henry - Hypnopraticien</h1>
+                
+                {/* Burger Menu Icon */}
                 <button className="burger-menu" onClick={toggleMobileMenu}>
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
 
+                {/* Navigation Links */}
                 <div className={`navbar-link ${isMobileMenuOpen ? 'active' : ''}`}>
                     <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Accueil</NavLink>
                     <NavLink to="/Contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
+
+                    {/* Dropdown Menu */}
                     <div
                         className={`dropdown ${isMobileMenuOpen ? 'mobile-active' : ''}`}
                         onMouseEnter={() => !isMobileMenuOpen && setShowDropDown(true)}
                         onMouseLeave={() => !isMobileMenuOpen && setShowDropDown(false)}
                     >
                         <p>En savoir plus</p>
+                        {/* Dropdown Items */}
                         {(showDropDown || isMobileMenuOpen) && (
                             <div className="dropdown-menu">
                                 <NavLink to="/APropos" onClick={() => setIsMobileMenuOpen(false)}>À propos de moi</NavLink>
@@ -49,6 +54,7 @@ function Header() {
                 </div>
             </nav>
 
+            {/* Tarifs Dialog */}
             <dialog ref={dialogRef}>
                 <div className='dialog-content'>
                     <h2>Tarifs adulte/enfant</h2>
@@ -62,3 +68,4 @@ function Header() {
 }
 
 export default Header;
+
