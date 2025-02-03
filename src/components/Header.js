@@ -4,7 +4,6 @@ import { useState, useRef } from 'react';
 import { Menu, X } from "lucide-react";
 
 function Header() {
-    const [showDropDown, setShowDropDown] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dialogRef = useRef(null);
 
@@ -24,7 +23,7 @@ function Header() {
         <>
             <nav>
                 <h1>Claude Henry - Hypnopraticien</h1>
-                
+
                 {/* Burger Menu Icon */}
                 <button className="burger-menu" onClick={toggleMobileMenu}>
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -34,23 +33,9 @@ function Header() {
                 <div className={`navbar-link ${isMobileMenuOpen ? 'active' : ''}`}>
                     <NavLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Accueil</NavLink>
                     <NavLink to="/Contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</NavLink>
-
-                    {/* Dropdown Menu */}
-                    <div
-                        className={`dropdown ${isMobileMenuOpen ? 'mobile-active' : ''}`}
-                        onMouseEnter={() => !isMobileMenuOpen && setShowDropDown(true)}
-                        onMouseLeave={() => !isMobileMenuOpen && setShowDropDown(false)}
-                    >
-                        <p>En savoir plus</p>
-                        {/* Dropdown Items */}
-                        {(showDropDown || isMobileMenuOpen) && (
-                            <div className="dropdown-menu">
-                                <NavLink to="/APropos" onClick={() => setIsMobileMenuOpen(false)}>À propos de moi</NavLink>
-                                <p onClick={openDialog}>Tarifs</p>
-                                <NavLink to="/Avis" onClick={() => setIsMobileMenuOpen(false)}>Laisser un avis</NavLink>
-                            </div>
-                        )}
-                    </div>
+                    <NavLink to="/APropos" onClick={() => setIsMobileMenuOpen(false)}>À propos de moi</NavLink>
+                    <p className="tarifs-link" onClick={openDialog}>Tarifs</p>
+                    <NavLink to="/Avis" onClick={() => setIsMobileMenuOpen(false)}>Laisser un avis</NavLink>
                 </div>
             </nav>
 

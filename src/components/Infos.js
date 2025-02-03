@@ -20,7 +20,6 @@ function Infos({src, alt}) {
                 <div className="opening">
                     <div>
                         <h3>Consultation uniquement sur rendez-vous !</h3>
-                        
                     </div>
                     <img src={src} alt={alt} loading='lazy'></img>
                 </div>
