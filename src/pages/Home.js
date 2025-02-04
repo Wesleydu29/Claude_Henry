@@ -1,6 +1,6 @@
 import Banner from "../components/Banner";
 import Gallery from "../components/Gallery";
-import plage from "../assets/photo_plage.jpg"
+import plage from "../assets/plage.webp"
 import ScrollToTop from "../components/ScrollBtn";
 import ListeAvis from "../components/ListAvis";
 import { Helmet } from "react-helmet";

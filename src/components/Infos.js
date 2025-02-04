@@ -18,9 +18,7 @@ function Infos({src, alt}) {
                     <p>Linguennec 29140 Saint Yvy</p>
                 </div>
                 <div className="opening">
-                    <div>
-                        <h3>Consultation uniquement sur rendez-vous !</h3>
-                    </div>
+                    <h3>Consultation uniquement sur rendez-vous !</h3>
                     <img src={src} alt={alt} loading='lazy'></img>
                 </div>
                 

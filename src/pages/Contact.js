@@ -1,8 +1,7 @@
 import Infos from "../components/Infos";
 import Banner from "../components/Banner";
-import montagnes from "../assets/montagne.webp"
 import géolocalisation from '../assets/géolocalisation.webp'
-import rivière from '../assets/rivière.jpg'
+import rivière from '../assets/rivière.webp'
 
 function Contact() {
     return(

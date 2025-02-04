@@ -25,7 +25,7 @@ function Header() {
                 <h1>Claude Henry - Hypnopraticien</h1>
 
                 {/* Burger Menu Icon */}
-                <button className="burger-menu" onClick={toggleMobileMenu}>
+                <button className="burger-menu" title="menu" onClick={toggleMobileMenu}>
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
 
