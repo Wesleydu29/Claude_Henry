@@ -138,6 +138,7 @@ dialog::backdrop {
 
   .navbar-link.active {
     display: flex;
+    top: 70px;
   }
 
   .burger-menu {
@@ -181,11 +182,10 @@ dialog::backdrop {
       transform: translateX(0);
     }
   }
-
-  /* Lorsqu'on clique sur "En savoir plus", afficher le menu déroulant */
-  .dropdown.active .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
  }
+@media (max-width: 480px) {
+  .navbar-link.active {
+    top: 120px;
+  }
+  
+}
