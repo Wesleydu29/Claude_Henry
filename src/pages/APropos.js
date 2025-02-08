@@ -19,7 +19,7 @@ function APropos() {
                     Mes connaissances sont validées par des diplômes. Ma profession de soignant vous assure un suivi éthique sérieux, de la déontologie.
                 </p>
                 <p>
-                    Comme décrit sur la page <NavLink to="/">d'accueil</NavLink>, je peux vous aider dans différents domaines <br/>
+                    Comme décrit sur la <NavLink to="/"> page d'accueil</NavLink>, je peux vous aider dans différents domaines <br/>
                 </p>
                 <p>
                     - La prise en charge de la douleur, de l'anxiété.<br/>
