@@ -17,6 +17,8 @@ function ListeAvis() {
         setAvisList(sortedAvis);
     }, []);
 
+    const averageRating = avisList.length > 0 ? (avisList.reduce((sum, avis) => sum + avis.note, 0) /avisList.length).toFixed(1) : 0;
+
     // Calculer les avis à afficher pour la page actuelle
     const paginatedAvis = avisList.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
@@ -46,52 +48,60 @@ function ListeAvis() {
     }; */
 
     return (
-        <div className="liste-avis">
-            <h2>Avis de mes clients ({avisList.length} avis)</h2>
-            
-            {avisList.length === 0 ? (
-                <p>Aucun avis pour le moment.</p>
-            ) : (
-                <div>
-                    <ul>
-                        {paginatedAvis.map((avis, index) => (
-                            <li key={index} className="avis-item">
-                                <h3>{avis.nom} {avis.prenom}</h3>
-                                <p>Note : {avis.note} étoiles</p>
-                                <p>{avis.avis}</p>
-                                <p><small>Publié le {avis.date}</small></p>
+        <div className='list-container'>
+            <div className="liste-avis">
+                <h2>Avis de mes clients ({avisList.length} avis)</h2>
 
-                                {/* <button 
-                                    onClick={() => handleDelete(index)} 
-                                    className="delete-btn"
+                {avisList.length > 0 && (
+                    <p className='average-rating'>
+                        Note moyenne : {averageRating} étoiles
+                    </p>
+                )}
+                
+                {avisList.length === 0 ? (
+                    <p>Aucun avis pour le moment.</p>
+                ) : (
+                    <div>
+                        <ul>
+                            {paginatedAvis.map((avis, index) => (
+                                <li key={index} className="avis-item">
+                                    <h3>{avis.nom} {avis.prenom}</h3>
+                                    <p>Note : {avis.note} étoiles</p>
+                                    <p>{avis.avis}</p>
+                                    <p><small>Publié le {avis.date}</small></p>
+
+                                    {/* <button 
+                                        onClick={() => handleDelete(index)} 
+                                        className="delete-btn"
+                                    >
+                                        Supprimer
+                                    </button> */}
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Affichage des flèches de navigation si il y a plus de 2 avis */}
+                        {avisList.length > itemsPerPage && (
+                            <div className="pagination-controls">
+                                <button 
+                                    onClick={handlePrev} 
+                                    disabled={currentPage === 0}
+                                    className="pagination-btn"
                                 >
-                                    Supprimer
-                                </button> */}
-                            </li>
-                        ))}
-                    </ul>
-
-                    {/* Affichage des flèches de navigation si il y a plus de 2 avis */}
-                    {avisList.length > itemsPerPage && (
-                        <div className="pagination-controls">
-                            <button 
-                                onClick={handlePrev} 
-                                disabled={currentPage === 0}
-                                className="pagination-btn"
-                            >
-                                &#8592; Précédent
-                            </button>
-                            <button 
-                                onClick={handleNext} 
-                                disabled={(currentPage + 1) * itemsPerPage >= avisList.length}
-                                className="pagination-btn"
-                            >
-                                Suivant &#8594;
-                            </button>
-                        </div>
-                    )}
-                </div>
-            )}
+                                    &#8592; Précédent
+                                </button>
+                                <button 
+                                    onClick={handleNext} 
+                                    disabled={(currentPage + 1) * itemsPerPage >= avisList.length}
+                                    className="pagination-btn"
+                                >
+                                    Suivant &#8594;
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

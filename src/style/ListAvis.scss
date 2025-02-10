@@ -1,3 +1,8 @@
+.list-container {
+    width: 100%;
+    border-top: 1px solid #000000;
+    margin-top: 5%;
+}
 .liste-avis {
     max-width: 800px;
     margin: 20px auto;
@@ -5,6 +10,7 @@
     background-color: #AED7FF;
     border-radius: 8px;
     border: 1px solid #ddd;
+    margin-top: 3%;
 
     h2 {
         text-align: center;
@@ -54,7 +60,8 @@
         background-color: #d6d6d6;
         cursor: not-allowed;
     }
-    .delete-btn {
+    //bouton supprimer pour une future mise à jour 
+    /*.delete-btn {
         background-color: red;
         color: white;
         border: none;
@@ -63,7 +70,7 @@
         cursor: pointer;
         font-size: 14px;
         margin-top: 10px;
-    }
+    }*/
     
     /* .delete-btn:hover {
         background-color: darkred;
