@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import '../style/ListAvis.scss';
 
 function ListeAvis() {
@@ -6,21 +7,26 @@ function ListeAvis() {
     const [currentPage, setCurrentPage] = useState(0);
     const itemsPerPage = 2;
 
-    // Charger les avis du localStorage à chaque chargement de la page
+    // Fetch avis from the backend
     useEffect(() => {
-        const storedAvis = JSON.parse(localStorage.getItem('avis')) || [];
-        
+        const fetchAvis = async () => {
+            try {
+                const response = await axios.get("http://localhost:5000/api/avis");
+                // Sort avis by date (newest first)
+                const sortedAvis = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                setAvisList(sortedAvis);
+            } catch (error) {
+                console.error("Erreur lors du chargement des avis", error);
+            }
+        };
 
-        // Trier les avis par date (du plus récent au plus ancien)
-        const sortedAvis = storedAvis.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-        setAvisList(sortedAvis);
+        fetchAvis();
     }, []);
 
-    // Calculer les avis à afficher pour la page actuelle
+    // Paginated avis
     const paginatedAvis = avisList.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
-    // Fonction pour naviguer entre les pages
+    // Pagination handlers
     const handleNext = () => {
         if ((currentPage + 1) * itemsPerPage < avisList.length) {
             setCurrentPage(currentPage + 1);
@@ -32,18 +38,6 @@ function ListeAvis() {
             setCurrentPage(currentPage - 1);
         }
     };
-
-    /* // Fonction pour supprimer un avis
-    const handleDelete = (index) => {
-        // Crée une nouvelle liste d'avis sans celui supprimé
-        const updatedAvisList = avisList.filter((_, i) => i !== index);
-
-        // Met à jour le state avec la nouvelle liste
-        setAvisList(updatedAvisList);
-
-        // Enregistre la nouvelle liste dans le localStorage
-        localStorage.setItem('avis', JSON.stringify(updatedAvisList));
-    }; */
 
     return (
         <div className="liste-avis">
@@ -59,19 +53,12 @@ function ListeAvis() {
                                 <h3>{avis.nom} {avis.prenom}</h3>
                                 <p>Note : {avis.note} étoiles</p>
                                 <p>{avis.avis}</p>
-                                <p><small>Publié le {avis.date}</small></p>
-
-                                {/* <button 
-                                    onClick={() => handleDelete(index)} 
-                                    className="delete-btn"
-                                >
-                                    Supprimer
-                                </button> */}
+                                <p><small>Publié le {new Date(avis.date).toLocaleString()}</small></p>
                             </li>
                         ))}
                     </ul>
 
-                    {/* Affichage des flèches de navigation si il y a plus de 2 avis */}
+                    {/* Pagination controls */}
                     {avisList.length > itemsPerPage && (
                         <div className="pagination-controls">
                             <button 
@@ -97,4 +84,3 @@ function ListeAvis() {
 }
 
 export default ListeAvis;
-
