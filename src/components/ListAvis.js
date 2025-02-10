@@ -23,6 +23,20 @@ function ListeAvis() {
         fetchAvis();
     }, []);
 
+    /* // Fonction pour supprimer un avis
+    const handleDelete = (index) => {
+        // Crée une nouvelle liste d'avis sans celui supprimé
+        const updatedAvisList = avisList.filter((_, i) => i !== index);
+
+        // Met à jour le state avec la nouvelle liste
+        setAvisList(updatedAvisList);
+
+        // Enregistre la nouvelle liste dans le localStorage
+        localStorage.setItem('avis', JSON.stringify(updatedAvisList));
+    }; */
+
+    const averageRating = avisList.length > 0 ? (avisList.reduce((sum, avis) => sum + avis.note, 0) /avisList.length).toFixed(1) : 0;
+
     // Paginated avis
     const paginatedAvis = avisList.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
@@ -42,6 +56,12 @@ function ListeAvis() {
     return (
         <div className="liste-avis">
             <h2>Avis de mes clients ({avisList.length} avis)</h2>
+
+            {avisList.length > 0 && (
+                <p className="average-rating">
+                    Note moyenne : {averageRating} étoiles
+                </p>
+            )}
             
             {avisList.length === 0 ? (
                 <p>Aucun avis pour le moment.</p>
@@ -54,6 +74,13 @@ function ListeAvis() {
                                 <p>Note : {avis.note} étoiles</p>
                                 <p>{avis.avis}</p>
                                 <p><small>Publié le {new Date(avis.date).toLocaleString()}</small></p>
+
+                                {/* <button 
+                                    onClick={() => handleDelete(index)} 
+                                    className="delete-btn"
+                                >
+                                    Supprimer
+                                </button> */}
                             </li>
                         ))}
                     </ul>
