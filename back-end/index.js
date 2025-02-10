@@ -1,95 +1,74 @@
 require('dotenv').config();
 const express = require('express');
-const mysql = require('mysql');
+const mongoose = require('mongoose'); // MongoDB library
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = 5000;
+const PORT = 5001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-
-const dbConfig = {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-};
-
-const db = mysql.createConnection(dbConfig);
-
-
-db.connect((err) => {
-    if (err) {
-        console.error('Error connecting to MySQL:', err);
-        return;
-    }
-    console.log('Connected to MySQL server');
-
-
-    db.query('CREATE DATABASE IF NOT EXISTS claude_henry', (err) => {
-        if (err) {
-            console.error('Error creating database:', err);
-            return;
-        }
-        console.log('Database "claude_henry" created or already exists');
-
-        db.query('USE claude_henry', (err) => {
-            if (err) {
-                console.error('Error switching to database:', err);
-                return;
-            }
-            console.log('Using database "claude_henry"');
-
-
-            const createTableQuery = `
-                CREATE TABLE IF NOT EXISTS avis (
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    nom VARCHAR(255) NOT NULL,
-                    prenom VARCHAR(255) NOT NULL,
-                    note INT NOT NULL,
-                    avis TEXT NOT NULL,
-                    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                )
-            `;
-            db.query(createTableQuery, (err) => {
-                if (err) {
-                    console.error('Error creating table:', err);
-                    return;
-                }
-                console.log('Table "avis" created or already exists');
-            });
-        });
-    });
+// MongoDB connection
+const mongoURI = 'mongodb+srv://wesleydu29:QwAVr5yJQIr0F4OK@claude-henry.ds5iz.mongodb.net/?retryWrites=true&w=majority&appName=claude-henry'; // Replace with your MongoDB URI
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 
+const db = mongoose.connection;
 
+db.on('error', (err) => {
+    console.error('Error connecting to MongoDB:', err);
+});
 
+db.once('open', () => {
+    console.log('Connected to MongoDB');
+});
 
-app.post('/api/avis', (req, res) => {
+// Define a schema for the "avis" collection
+const avisSchema = new mongoose.Schema({
+    nom: { type: String, required: true },
+    prenom: { type: String, required: true },
+    note: { type: Number, required: true },
+    avis: { type: String, required: true },
+    date: { type: Date, default: Date.now },
+});
+
+// Create a model for the "avis" collection
+const Avis = mongoose.model('Avis', avisSchema);
+
+// Routes
+
+// Add a review
+app.post('/api/avis', async (req, res) => {
     const { nom, prenom, note, avis } = req.body;
+
     if (!nom || !prenom || !note || !avis) {
         return res.status(400).json({ error: "All fields are required" });
     }
 
-    const query = "INSERT INTO avis (nom, prenom, note, avis) VALUES (?, ?, ?, ?)";
-    db.query(query, [nom, prenom, note, avis], (err, result) => {
-        if (err) return res.status(500).json({ error: err });
-        res.json({ message: "Review added successfully", id: result.insertId });
-    });
+    try {
+        const newAvis = new Avis({ nom, prenom, note, avis });
+        await newAvis.save();
+        res.json({ message: "Review added successfully", id: newAvis._id });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
-
-app.get('/api/avis', (req, res) => {
-    const query = "SELECT * FROM avis ORDER BY date DESC";
-    db.query(query, (err, results) => {
-        if (err) return res.status(500).json({ error: err });
-        res.json(results);
-    });
+// Get all reviews
+app.get('/api/avis', async (req, res) => {
+    try {
+        const avisList = await Avis.find().sort({ date: -1 }); // Sort by date in descending order
+        res.json(avisList);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
-
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

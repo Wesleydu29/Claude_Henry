@@ -11,7 +11,7 @@ function ListeAvis() {
     useEffect(() => {
         const fetchAvis = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/avis");
+                const response = await axios.get("http://localhost:5001/api/avis");
                 // Sort avis by date (newest first)
                 const sortedAvis = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setAvisList(sortedAvis);
