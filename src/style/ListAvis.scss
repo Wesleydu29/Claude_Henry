@@ -15,6 +15,18 @@
       color: #555;
       margin-bottom: 2rem;
     }
+    .star-rating {
+        display: inline-flex;
+        align-items: center;
+        .star-filled {
+            color: #ffc107;
+            font-size: 1.5rem;
+        }
+        .star-empty {
+            color: #ddd;
+            font-size: 1.5rem;
+        }
+    }
   
     .carousel-container {
       position: relative;

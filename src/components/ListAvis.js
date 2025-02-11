@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import '../style/ListAvis.scss';
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 function ListeAvis() {
     const [avisList, setAvisList] = useState([]);
@@ -22,7 +22,7 @@ function ListeAvis() {
         fetchAvis();
     }, []);
 
-    const averageRating = avisList.length > 0 ? (avisList.reduce((sum, avis) => sum + avis.note, 0) / avisList.length).toFixed(1) : 0;
+    const averageRating = avisList.length > 0 ? parseFloat((avisList.reduce((sum, avis) => sum + avis.note, 0) / avisList.length).toFixed(1)) : 0;
 
     // Auto-slide timer
     useEffect(() => {
@@ -35,13 +35,25 @@ function ListeAvis() {
         }
     }, [avisList]);
 
+    const renderStars = (rating) => {
+        const fullStars = Math.floor(rating);
+        const hasHalfStar = rating - fullStars >= 0.5;
+        return (
+            <div className="star-rating">
+                {[...Array(5)].map((_, index) => (
+                    index < fullStars ? <FaStar key={index} className="star-filled" /> : <FaRegStar key={index} className="star-empty" />
+                ))}
+            </div>
+        );
+    };
+
     return (
         <div className="liste-avis">
             <h2>Avis de mes clients ({avisList.length} avis)</h2>
 
             {avisList.length > 0 && (
                 <p className="average-rating">
-                    Note moyenne : {averageRating} étoiles
+                    Note moyenne : ({averageRating}/5) {renderStars(averageRating)} 
                 </p>
             )}
 
@@ -70,14 +82,14 @@ function ListeAvis() {
                         <button 
                             onClick={() => setCurrentIndex((currentIndex - 1 + avisList.length) % avisList.length)}
                             className="pagination-btn"
-                            disabled={avisList.length <= 1}
+                            disabled={avisList.length <= 1 || currentIndex === 0}
                         >
                             &#8592; Précédent
                         </button>
                         <button 
                             onClick={() => setCurrentIndex((currentIndex + 1) % avisList.length)}
                             className="pagination-btn"
-                            disabled={currentIndex == avisList.length }
+                            disabled={avisList.length <= 1 || currentIndex === avisList.length - 1}
                         >
                             Suivant &#8594;
                         </button>
