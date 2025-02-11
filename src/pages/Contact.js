@@ -1,6 +1,6 @@
 import Infos from "../components/Infos";
 import Banner from "../components/Banner";
-import géolocalisation from '../assets/géolocalisation.webp'
+import géolocalisation from '../assets/geolocalisation.webp'
 import rivière from '../assets/rivière.webp'
 
 function Contact() {

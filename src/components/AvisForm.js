@@ -1,44 +1,13 @@
-import React, {useState} from "react";
-import '../style/AvisForm.scss'
+import React, { useState } from "react";
+import axios from "axios";
+import '../style/AvisForm.scss';
 
 function FormulaireAvis() {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
     const [note, setNote] = useState(0); // Note de 1 à 5
     const [avis, setAvis] = useState('');
-
-    // Récupérer les avis existants dans le localStorage
-    const getAvis = () => {
-        const storedAvis = JSON.parse(localStorage.getItem('avis')) || [];
-        return storedAvis;
-    };
-
-    // Enregistrer un avis
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Créer un nouvel avis
-        const newAvis = {
-            nom,
-            prenom,
-            note,
-            avis,
-            date: new Date().toLocaleString(),
-        };
-
-        // Récupérer les anciens avis et ajouter le nouveau
-        const avisList = getAvis();
-        avisList.push(newAvis);
-
-        // Sauvegarder les avis dans le localStorage
-        localStorage.setItem('avis', JSON.stringify(avisList));
-
-        // Réinitialiser le formulaire
-        setNom('');
-        setPrenom('');
-        setNote(0);
-        setAvis('');
-    };
+    const [message, setMessage] = useState('');
 
     // Gérer le changement des champs
     const handleChange = (setter) => (e) => {
@@ -50,8 +19,31 @@ function FormulaireAvis() {
         setNote(rating);
     };
 
+    // Enregistrer un avis
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    return(
+        try {
+            
+            const response = await axios.post("http://localhost:5001/api/avis", {
+                nom,
+                prenom,
+                note,
+                avis,
+                date: new Date().toLocaleString(),
+            });
+
+            setMessage("Avis ajouté avec succès !");
+            setNom('');
+            setPrenom('');
+            setNote(0);
+            setAvis('');
+        } catch (error) {
+            setMessage("Erreur lors de l'ajout de l'avis");
+        }
+    };
+
+    return (
         <>
             <form onSubmit={handleSubmit} className="formulaire-avis">
                 <div className="form-group">
@@ -105,6 +97,8 @@ function FormulaireAvis() {
                 <div className="form-group">
                     <button type="submit">Envoyer</button>
                 </div>
+
+                {message && <p>{message}</p>}
             </form>
         </>
     );
