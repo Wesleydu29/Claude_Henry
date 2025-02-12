@@ -7,7 +7,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://claude-henry-hypnopraticien.fr', // Autorise uniquement ton domaine
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Autorise les méthodes nécessaires
+    credentials: true // Si tu utilises des cookies ou des sessions
+}));
 app.use(bodyParser.json());
 
 // Initialize SQLite database
