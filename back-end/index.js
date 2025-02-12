@@ -10,9 +10,11 @@ const PORT = 5001;
 app.use(cors());
 app.use(bodyParser.json());
 
+const env = require('./env')
+
 // MongoDB connection
-const mongoURI = 'mongodb+srv://wesleydu29:QwAVr5yJQIr0F4OK@claude-henry.ds5iz.mongodb.net/?retryWrites=true&w=majority&appName=claude-henry'; // Replace with your MongoDB URI
-mongoose.connect(mongoURI, {
+
+mongoose.connect(env.URL_BDD, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
