@@ -9,17 +9,20 @@ function ListeAvis() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const storedAvis = JSON.parse(localStorage.getItem('avis')) || [];
-        
+        const fetchAvis = async () => {
+            try {
+                const response = await axios.get("http://localhost:5001/api/avis");
+                const sortedAvis = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                setAvisList(sortedAvis);
+            } catch (error) {
+                console.error("Erreur lors du chargement des avis", error);
+            }
+        };
 
-        // Trier les avis par date (du plus récent au plus ancien)
-        const sortedAvis = storedAvis.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-        setAvisList(sortedAvis);
+        fetchAvis();
     }, []);
 
-    // Calculer les avis à afficher pour la page actuelle
-    const paginatedAvis = avisList.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+    const averageRating = avisList.length > 0 ? parseFloat((avisList.reduce((sum, avis) => sum + avis.note, 0) / avisList.length).toFixed(1)) : 0;
 
     // Auto-slide timer
     useEffect(() => {
@@ -47,48 +50,50 @@ function ListeAvis() {
     return (
         <div className="liste-avis">
             <h2>Avis de mes clients ({avisList.length} avis)</h2>
-            
+
+            {avisList.length > 0 && (
+                <p className="average-rating">
+                    Note moyenne : ({averageRating}/5) {renderStars(averageRating)} 
+                </p>
+            )}
+
             {avisList.length === 0 ? (
                 <p>Aucun avis pour le moment.</p>
             ) : (
-                <div>
-                    <ul>
-                        {paginatedAvis.map((avis, index) => (
-                            <li key={index} className="avis-item">
-                                <h3>{avis.nom} {avis.prenom}</h3>
-                                <p>Note : {avis.note} étoiles</p>
-                                <p>{avis.avis}</p>
-                                <p><small>Publié le {avis.date}</small></p>
+                <div className="carousel-container">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentIndex}
+                            className="avis-card"
+                            initial={{ opacity: 0, x: 100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -100 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <h3>{avisList[currentIndex].nom} {avisList[currentIndex].prenom}</h3>
+                            <p>Note : {avisList[currentIndex].note} étoiles</p>
+                            <p>{avisList[currentIndex].avis}</p>
+                            <p><small>Publié le {new Date(avisList[currentIndex].date).toLocaleString()}</small></p>
+                        </motion.div>
+                    </AnimatePresence>
 
-                                {/* <button 
-                                    onClick={() => handleDelete(index)} 
-                                    className="delete-btn"
-                                >
-                                    Supprimer
-                                </button> */}
-                            </li>
-                        ))}
-                    </ul>
-
-                    {/* Affichage des flèches de navigation si il y a plus de 2 avis */}
-                    {avisList.length > itemsPerPage && (
-                        <div className="pagination-controls">
-                            <button 
-                                onClick={handlePrev} 
-                                disabled={currentPage === 0}
-                                className="pagination-btn"
-                            >
-                                &#8592; Précédent
-                            </button>
-                            <button 
-                                onClick={handleNext} 
-                                disabled={(currentPage + 1) * itemsPerPage >= avisList.length}
-                                className="pagination-btn"
-                            >
-                                Suivant &#8594;
-                            </button>
-                        </div>
-                    )}
+                    {/* Pagination controls*/ }
+                    <div className="pagination-controls">
+                        <button 
+                            onClick={() => setCurrentIndex((currentIndex - 1 + avisList.length) % avisList.length)}
+                            className="pagination-btn"
+                            disabled={avisList.length <= 1 || currentIndex === 0}
+                        >
+                            &#8592; Précédent
+                        </button>
+                        <button 
+                            onClick={() => setCurrentIndex((currentIndex + 1) % avisList.length)}
+                            className="pagination-btn"
+                            disabled={avisList.length <= 1 || currentIndex === avisList.length - 1}
+                        >
+                            Suivant &#8594;
+                        </button>
+                    </div>
                 </div>
             )}
         </div>
@@ -96,3 +101,4 @@ function ListeAvis() {
 }
 
 export default ListeAvis;
+
