@@ -7,6 +7,7 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 function ListeAvis() {
     const [avisList, setAvisList] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchAvis = async () => {
@@ -14,8 +15,10 @@ function ListeAvis() {
                 const response = await axios.get("http://localhost:5001/api/avis");
                 const sortedAvis = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setAvisList(sortedAvis);
+                setError(null); // Clear any previous errors
             } catch (error) {
                 console.error("Erreur lors du chargement des avis", error);
+                setError("Erreur lors du chargement des avis. Veuillez réessayer plus tard.");
             }
         };
 
@@ -37,7 +40,6 @@ function ListeAvis() {
 
     const renderStars = (rating) => {
         const fullStars = Math.floor(rating);
-        const hasHalfStar = rating - fullStars >= 0.5;
         return (
             <div className="star-rating">
                 {[...Array(5)].map((_, index) => (
@@ -50,6 +52,8 @@ function ListeAvis() {
     return (
         <div className="liste-avis">
             <h2>Avis de mes clients ({avisList.length} avis)</h2>
+
+            {error && <p className="error-message">{error}</p>}
 
             {avisList.length > 0 && (
                 <p className="average-rating">
@@ -77,7 +81,7 @@ function ListeAvis() {
                         </motion.div>
                     </AnimatePresence>
 
-                    {/* Pagination controls*/ }
+                    {/* Pagination controls */}
                     <div className="pagination-controls">
                         <button 
                             onClick={() => setCurrentIndex((currentIndex - 1 + avisList.length) % avisList.length)}
@@ -101,4 +105,3 @@ function ListeAvis() {
 }
 
 export default ListeAvis;
-

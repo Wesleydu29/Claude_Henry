@@ -24,22 +24,25 @@ function FormulaireAvis() {
         e.preventDefault();
 
         try {
-            
+            // Envoyer les données au backend
             const response = await axios.post("http://localhost:5001/api/avis", {
                 nom,
                 prenom,
                 note,
                 avis,
-                date: new Date().toLocaleString(),
             });
 
+            // Afficher un message de succès
             setMessage("Avis ajouté avec succès !");
+
+            // Réinitialiser le formulaire
             setNom('');
             setPrenom('');
             setNote(0);
             setAvis('');
         } catch (error) {
-            setMessage("Erreur lors de l'ajout de l'avis");
+            // Afficher un message d'erreur
+            setMessage("Erreur lors de l'ajout de l'avis : " + error.message);
         }
     };
 
