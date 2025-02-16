@@ -12,7 +12,7 @@ function ListeAvis() {
     useEffect(() => {
         const fetchAvis = async () => {
             try {
-                const response = await axios.get("http://localhost:5001/api/avis");
+                const response = await axios.get("/api/avis");
                 const sortedAvis = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setAvisList(sortedAvis);
                 setError(null); // Clear any previous errors
