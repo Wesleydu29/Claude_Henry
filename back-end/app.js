@@ -7,11 +7,10 @@ const Avis = require('./models/Avis');
 
 const app = express();
 
-
 // remplacer la chaine de caractère par celle de mongoDB
 // useNewurlparser est obsolète, à modifier
 
-mongoose.connect('mongodb+srv://wesleydu29:QwAVr5yJQIr0F4OK@claude-henry.ds5iz.mongodb.net/?retryWrites=true&w=majority&appName=claude-henry')
+mongoose.connect(process.env.URL_BDD)
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
