@@ -7,6 +7,7 @@ function FormulaireAvis() {
     const [prenom, setPrenom] = useState('');
     const [note, setNote] = useState(0); // Note de 1 à 5
     const [avis, setAvis] = useState('');
+    const [date, setDate] = useState('')
     const [message, setMessage] = useState('');
 
     // Gérer le changement des champs
@@ -25,11 +26,12 @@ function FormulaireAvis() {
 
         try {
             // Envoyer les données au backend
-            const response = await axios.post("http://localhost:5001/api/avis", {
+            const response = await axios.post("http://localhost:3000/api/avis", {
                 nom,
                 prenom,
                 note,
                 avis,
+                date
             });
 
             // Afficher un message de succès
@@ -40,6 +42,7 @@ function FormulaireAvis() {
             setPrenom('');
             setNote(0);
             setAvis('');
+            setDate('')
         } catch (error) {
             // Afficher un message d'erreur
             setMessage("Erreur lors de l'ajout de l'avis : " + error.message);
