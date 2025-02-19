@@ -50,41 +50,6 @@ nav {
           }
       }
   
-      .dropdown {
-          position: relative;
-  
-          .dropdown-menu {
-              display: none;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              border-radius: 5px;
-              background-color: white;
-              border: 1px solid #ccc;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-              z-index: 1000;
-              min-width: 150px;
-              a {
-                  display: block;
-                  padding: 10px;
-                  color: black;
-                  text-decoration: none;
-                  color: #000000;
-                  &:hover {
-                      text-decoration: underline;
-                      background-color: #f0f0f0;
-                  }
-                  &.active {
-                      background-color:#000000 ;
-                      color: white;
-                  }
-              }
-          }
-  
-          &:hover .dropdown-menu {
-              display: block;
-          }
-      }
   }
   
 }
@@ -137,28 +102,15 @@ dialog::backdrop {
   }
 
   .navbar-link.active {
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     top: 70px;
   }
 
   .burger-menu {
     display: block; /* Afficher le menu burger */
-  }
-
-  /* Lorsque le menu est ouvert, afficher tous les liens */
-  .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-menu a, .dropdown-menu p {
-    padding: 10px 0;
-    text-align: left;
   }
 
   .navbar-link a, .navbar-link p {

@@ -10,10 +10,11 @@ function Home(){
     return(
         <div>
             <Helmet>
-                <title> page d'accueil | Claude Henry - Hypnopraticien</title>
+                <title> Page d'accueil | Claude Henry - Hypnopraticien</title>
                 <meta name="description" content="Claude Henry - Hypnopraticien à Saint-Yvi, spécialiste en hypnose médicale et clinique et également évaluation et traitement de la douleur."/>
                 <meta name="keywords" content="Claude, Henry, hypnopraticien, hypnothérapeute, hypnothérapie, hypnose, Saint-Yvi, Quimper, Elliant, Fouesnant, tabac, addictions, troubles, 
                 émotions, sommeil, phobies, douleur, alimentation, confiance en soi" />
+                <meta name="robots" content="index, follow"/>
                 <meta property="og:title" content="Page d'Accueil | Claude Henry - Hypnopraticien" />
                 <meta property="og:description" content="spécialiste en hypnose médicale et clinique, évaluation et traintement de la douleur" />
                 <meta property="og:image" content="https://www.monsite.com/assets/profil.webp" />

@@ -2,11 +2,21 @@
 import { NavLink } from "react-router-dom";
 import Summary from "../components/Summary";
 import profil from '../assets/profil.webp'
+import { Helmet } from "react-helmet";
 import '../style/Apropos.scss'
 
 function APropos() {
     return(
         <div>
+             <Helmet>
+                <title> À propos | Claude Henry - hypnopraticien</title>
+                <meta name="description" content="Découvrez le parcours et les compétences de Claude Henry hypnothérapeute"/>
+                <meta name="robots" content="index, follow"/>
+                <meta property="og:title" content="À propos | Claude Henry - Hypnopraticien" />
+                <meta property="og:description" content="Découvrez mon approche et mon expertise en hypnose thérapeutique" />
+                <meta property="og:image" content="https://www.monsite.com/assets/profil.webp" />
+                <meta property="og:url" content="https://www.claude-henry-hypnopraticien.fr/APropos" />
+            </Helmet>
             <h2> En savoir plus</h2>
             <Summary src={profil} alt="portrait de Claude Henry"/>
             <div className="summary-content">
