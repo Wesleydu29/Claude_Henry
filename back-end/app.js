@@ -26,6 +26,10 @@ app.get('/api/avis', (req, res, next) => {
       .then(avis => res.status(200).json(avis))
       .catch(error => res.status(400).json({ error }));
   });
+  
+app.get('/api/avis', (req, res) => {
+    res.status(200).json({message: "serveur actif"});
+});
 
 // poster un nouvel élément.
 app.post('/api/avis', (req, res) => {
