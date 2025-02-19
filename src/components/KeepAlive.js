@@ -5,7 +5,7 @@ const PING_INTERVAL = 14 * 60 * 1000; // 14 minutes en millisecondes
 function KeepAlive() {
   useEffect(() => {
     const pingServer = () => {
-      fetch("https://claude-henry-backend.onrender.com/api/avis") // Remplace par ton URL de backend
+      fetch("https://claude-henry-backend.onrender.com/api/avis") 
         .then((res) => console.log("Ping réussi :", res.status))
         .catch((err) => console.error("Erreur lors du ping :", err));
     };

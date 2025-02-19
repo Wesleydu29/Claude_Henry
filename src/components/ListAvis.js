@@ -7,6 +7,7 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 function ListeAvis() {
     const [avisList, setAvisList] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -25,18 +26,19 @@ function ListeAvis() {
         fetchAvis();
     }, []);
 
+
     const averageRating = avisList.length > 0 ? parseFloat((avisList.reduce((sum, avis) => sum + avis.note, 0) / avisList.length).toFixed(1)) : 0;
 
     // Auto-slide timer
     useEffect(() => {
-        if (avisList.length > 0) {
+        if (avisList.length > 0 && !isPaused) {
             const interval = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % avisList.length);
             }, 5000); // Slide every 5 seconds
 
             return () => clearInterval(interval);
         }
-    }, [avisList]);
+    }, [avisList, isPaused, setCurrentIndex]);
 
     const renderStars = (rating) => {
         const fullStars = Math.floor(rating);
@@ -69,10 +71,12 @@ function ListeAvis() {
                         <motion.div
                             key={currentIndex}
                             className="avis-card"
-                            initial={{ opacity: 0, x: 100 }}
+                            initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -100 }}
-                            transition={{ duration: 0.5 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            onMouseEnter={()=> setIsPaused(true)} // met en pause le carousel
+                            onMouseLeave={()=> setIsPaused(false)} // reprends le défilement
                         >
                             <h3>{avisList[currentIndex].nom} {avisList[currentIndex].prenom}</h3>
                             <p>Note : {avisList[currentIndex].note} étoiles</p>
