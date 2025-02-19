@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import KeepAlive from "./components/KeepAlive";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import APropos from "./pages/APropos";
@@ -10,6 +11,7 @@ function App() {
   return (
     <Router>
       <Header/>
+      <KeepAlive/>
       <main>
         <Routes>
           <Route path='/' element={<Home/>}/>
