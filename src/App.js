@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import KeepAlive from "./components/KeepAlive";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -8,20 +8,19 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Avis from "./pages/Avis";
 import { useEffect } from "react";
-import { ReactGAImplementation } from "react-ga4";
-import { useLocation } from 'react-router-dom';
+import  ReactGA  from "react-ga4";
 
-ReactGAImplementation.initialize('G-67D73E3BXG');
+ReactGA.initialize('G-67D73E3BXG');
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    ReactGAImplementation.send({ hitType: "pageview", page: location.pathname });
+    ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location]);
 
   return (
-    <Router>
+    <>
       <Header/>
       <KeepAlive/>
       <main>
@@ -33,7 +32,7 @@ function App() {
         </Routes>
       </main>
       <Footer/>
-    </Router>
+    </>
   );
 }
 
