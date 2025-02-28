@@ -1,7 +1,7 @@
 .card {
     width: 350px;
     height: 400px;
-    perspective: 1000px; // Ajout de la perspective pour l'effet 3D
+    perspective: 1000px; /* Ajout de la perspective pour l'effet 3D*/
     .card-inner {
       width: 100%;
       height: 100%;
@@ -19,13 +19,15 @@
       height: 100%;
       position: absolute;
       backface-visibility: hidden;
+      backface-visibility: hidden;
+      backface-visibility: hidden;
       border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
   
     .card-front {
       background-color: white;
-      z-index: 2; // Assure que la face avant est visible au départ
+      z-index: 2; /* Assure que la face avant est visible au départ*/
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -52,7 +54,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      transform: rotateY(180deg); // Prépare la face arrière pour l'inversion
+      transform: rotateY(180deg); /* Prépare la face arrière pour l'inversion*/
       & a {
         color: #000000;
 
