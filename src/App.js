@@ -7,6 +7,7 @@ import APropos from "./pages/APropos";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Avis from "./pages/Avis";
+import { useEffect } from "react";
 import { ReactGAImplementation } from "react-ga4";
 import { useLocation } from 'react-router-dom';
 
