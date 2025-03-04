@@ -1,11 +1,20 @@
 import '../style/Header.scss';
 import { NavLink } from "react-router-dom";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from "lucide-react";
 
 function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dialogRef = useRef(null);
+
+    useEffect(() => {
+        if(isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        }else {
+            document.body.style.overflow = '';
+        }
+        return () => document.body.style.overflow = '';
+    }, [isMobileMenuOpen]);
 
     const openDialog = () => {
         dialogRef.current?.showModal();

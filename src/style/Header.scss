@@ -117,7 +117,9 @@ dialog::backdrop {
     align-items: center;
   }
   .navbar-link.active {
-    display: flex;
+    padding: 0;
+    position: absolute;
+    width: 100vw;
   }
 }
 
