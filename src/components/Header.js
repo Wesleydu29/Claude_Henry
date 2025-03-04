@@ -8,12 +8,26 @@ function Header() {
     const dialogRef = useRef(null);
 
     useEffect(() => {
-        if(isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        }else {
-            document.body.style.overflow = '';
+        const disableScroll = (e) => e.preventDefault(); // Bloque l'événement de scroll
+    
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'; // Empêche le scroll classique
+            document.body.style.position = 'fixed';  // Évite que la page saute
+            document.body.style.width = '100%'; // Évite des bugs sur certains mobiles
+            document.body.addEventListener('touchmove', disableScroll, { passive: false }); // Bloque le scroll tactile
+        } else {
+            document.body.style.overflow = ''; // Réactive le scroll
+            document.body.style.position = ''; 
+            document.body.style.width = ''; 
+            document.body.removeEventListener('touchmove', disableScroll); // Retire le blocage tactile
         }
-        return () => document.body.style.overflow = '';
+    
+        return () => {
+            document.body.style.overflow = ''; // Nettoyage
+            document.body.style.position = ''; 
+            document.body.style.width = ''; 
+            document.body.removeEventListener('touchmove', disableScroll); // Nettoyage du listener
+        };
     }, [isMobileMenuOpen]);
 
     const openDialog = () => {
