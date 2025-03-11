@@ -7,7 +7,7 @@ function Infos({src, alt}) {
             <div className="infos-content">
                 <div class="phone">
                     <i class="fa-solid fa-phone"></i>
-                    <p>07-65-81-41-72</p>
+                    <p>07-56-81-41-72</p>
                 </div>
                 <div class="mail">
                     <i class="fa-solid fa-envelope"></i>
