@@ -53,7 +53,7 @@ function ListeAvis() {
 
     return (
         <div className="liste-avis">
-            <h2>Avis de mes clients ({avisList.length} avis)</h2>
+            <h2>Avis de mes patients ({avisList.length} avis)</h2>
 
             {error && <p className="error-message">{error}</p>}
 

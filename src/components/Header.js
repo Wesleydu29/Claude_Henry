@@ -66,8 +66,8 @@ function Header() {
             <dialog ref={dialogRef}>
                 <div className='dialog-content'>
                     <h2>Tarifs adulte/enfant</h2>
-                    <p>Consultation au cabinet, 50€ la séance d'une durée, pouvant varier de 45 minutes à 1h30</p>
-                    <p>Consultation à domicile, 60€ la séance d'une durée, pouvant varier de 45 minutes à 1h30</p>
+                    <p>Consultation au cabinet, 50€ la séance d'une durée d'environ 1h</p>
+                    <p>Consultation à domicile, 60€ la séance d'une durée d'environ 1h</p>
                     <button onClick={closeDialog}>Fermer</button>
                 </div>
             </dialog>

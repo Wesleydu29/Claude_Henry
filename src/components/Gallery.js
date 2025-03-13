@@ -21,7 +21,7 @@ function Gallery() {
                     l'accompagnateur. "
                 </p>
                 <p>
-                    - D'après Antoine BIOY, psychologue : " 1. Un état de conscience modifié : une activation cortical particulière
+                    - D'après Antoine BIOY, psychologue : " 1. Un état de conscience modifié : une activation corticale particulière
                     et un phénomène de dissociation psychique. 2. Une relation intersubjective particulière : Une modalité relationnelle, une
                     communication particulière et un lien intersubjectif singulier."
                 </p>
