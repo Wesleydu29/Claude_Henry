@@ -48,8 +48,13 @@ function Header() {
                 <h1>Claude Henry - Hypnopraticien</h1>
 
                 {/* Burger Menu Icon */}
-                <button className="burger-menu" title="menu" onClick={toggleMobileMenu}>
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                <button 
+                    className={`burger-menu ${isMobileMenuOpen ? 'open' : ''}`} 
+                    title="menu" 
+                    onClick={toggleMobileMenu}
+                >
+                    <Menu size={28} style={{ display: isMobileMenuOpen ? 'none' : 'block' }} />
+                    <X size={28} style={{ display: isMobileMenuOpen ? 'block' : 'none' }} />
                 </button>
 
                 {/* Navigation Links */}
