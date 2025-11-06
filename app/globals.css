@@ -1,0 +1,23 @@
+
+
+body {
+  margin: 0;
+  font-family: "Montserrat", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-left:90px;
+  padding-right: 90px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
