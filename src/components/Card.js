@@ -2,7 +2,7 @@ import Link from "next/link";
 import '@/styles/Card.scss'
 import Image from 'next/image';
 
-function Card({ src, title, alt, content, color }) {
+export default function Card({ src, title, alt, content, color }) {
     return(
         <div className="card">
             <div className="card-inner">
@@ -26,5 +26,3 @@ function Card({ src, title, alt, content, color }) {
         </div>
     );
 };
-
-export default Card;

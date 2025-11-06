@@ -1,6 +1,6 @@
 import '@/styles/Footer.scss'
 
-function Footer() {
+export default function Footer() {
     return(
         <div className="footer">
             <p> 2025 Claude Henry. Tout droit reservés</p>
@@ -8,4 +8,3 @@ function Footer() {
     );
 };
 
-export default Footer;

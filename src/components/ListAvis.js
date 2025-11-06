@@ -6,7 +6,7 @@ import axios from "axios";
 import '@/styles/ListAvis.scss';
 import { FaStar, FaRegStar } from "react-icons/fa";
 
-function ListeAvis() {
+export default function ListeAvis() {
     const [avisList, setAvisList] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
@@ -109,5 +109,3 @@ function ListeAvis() {
         </div>
     );
 }
-
-export default ListeAvis;

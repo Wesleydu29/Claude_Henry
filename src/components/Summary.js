@@ -2,7 +2,7 @@
 import '@/styles/Summary.scss'
 import Image from "next/image";
 
-function Summary({src, alt}) {
+export default function Summary({src, alt}) {
     return(
         <div className="presenting">
             <Image src={src} alt={alt} loading='lazy'/>
@@ -16,5 +16,3 @@ function Summary({src, alt}) {
         </div>
     );
 };
-
-export default Summary;

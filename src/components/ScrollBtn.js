@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from "react";
 
 
-function ScrollToTop() {
+export default function ScrollToTop() {
     const [isVisible, setIsVisible] = useState(false);
     
     useEffect(() => {
@@ -52,5 +52,3 @@ function ScrollToTop() {
 
     );
 }
-
-export default ScrollToTop;

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import '@/styles/AvisForm.scss';
 
-function FormulaireAvis() {
+export default function FormulaireAvis() {
     const [nom, setNom] = useState('');
     const [prenom, setPrenom] = useState('');
     const [note, setNote] = useState(0); // Note de 1 à 5
@@ -108,5 +108,3 @@ function FormulaireAvis() {
         </>
     );
 }
-
-export default FormulaireAvis;

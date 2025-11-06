@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const PING_INTERVAL = 14 * 60 * 1000; // 14 minutes en millisecondes
 
-function KeepAlive() {
+export default function KeepAlive() {
   useEffect(() => {
     const pingServer = () => {
       fetch("https://claude-henry-backend.onrender.com/api/avis") 
@@ -24,4 +24,3 @@ function KeepAlive() {
   return null; // Ce composant ne rend rien
 }
 
-export default KeepAlive;

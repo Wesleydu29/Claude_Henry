@@ -1,7 +1,7 @@
 import '@/styles/Infos.scss'
 import Image from "next/image";
 
-function Infos({src, alt}) {
+export default function Infos({src, alt}) {
     return(
         <div className='infos'>
             <h2>Contactez moi ! </h2>
@@ -27,5 +27,3 @@ function Infos({src, alt}) {
         </div>
     );
 };
-
-export default Infos;

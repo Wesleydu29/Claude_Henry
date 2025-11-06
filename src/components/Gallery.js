@@ -8,7 +8,7 @@ import douleur from '../assets/douleur.webp'
 import femme_souriante from '../assets/femme_souriante.webp'
 import munch from '../assets/Edvard_Munch.webp'
 
-function Gallery() {
+export default function Gallery() {
     return(
         <div className="gallery-container">
             <div className="gallery-title">
@@ -56,5 +56,3 @@ function Gallery() {
         </div>
     );
 };
-
-export default Gallery;
