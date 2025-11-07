@@ -1,6 +1,6 @@
 import Banner from "@/components/Banner";
 import Gallery from "@/components/Gallery";
-import plage from "@/assets/plage.webp";
+const plage = "/assets/plage.webp";
 import ScrollToTop from "@/components/ScrollBtn";
 import ListeAvis from "@/components/ListAvis";
 import { Metadata } from "next";
@@ -19,7 +19,7 @@ export const metadata = {
       "Spécialiste en hypnose médicale et clinique, évaluation et traitement de la douleur.",
     images: [
       {
-        url: "https://www.monsite.com/assets/profil.webp",
+        url: "https://www.claude-henry-hypnopraticien.fr/assets/profil.webp",
         alt: "Claude Henry - Hypnopraticien",
       },
     ],

@@ -1,12 +1,12 @@
 import Card from "@components/Card"
 import '@/styles/Gallery.scss'
-import addictions from '../assets/addictions.webp'
-import sommeil from '../assets/sommeil.webp'
-import phobie from '../assets/phobie.webp'
-import bonbon from '../assets/bonbon.webp'
-import douleur from '../assets/douleur.webp'
-import femme_souriante from '../assets/femme_souriante.webp'
-import munch from '../assets/Edvard_Munch.webp'
+const addictions = '/assets/addictions.webp'
+const sommeil = '/assets/sommeil.webp'
+const phobie = '/assets/phobie.webp'
+const bonbon = '/assets/bonbon.webp'
+const douleur = '/assets/douleur.webp'
+const femme_souriante = '/assets/femme_souriante.webp'
+const munch = '/assets/Edvard_Munch.webp'
 
 export default function Gallery() {
     return(

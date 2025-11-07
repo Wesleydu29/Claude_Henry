@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Summary from "@/components/Summary";
-import profil from '@/assets/profil.webp'
+const profil = '/assets/profil.webp'
 
 import '@/styles/Apropos.scss'
 

@@ -9,6 +9,7 @@ function Banner({ backgroundImage, title, content, alt }) {
         alt={alt}
         fill 
         style={{ objectFit: 'cover', objectPosition: 'center' }}
+        loading="eager"
       />
       <div className="banner-content">
         <h2>{title}</h2>

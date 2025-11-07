@@ -20,7 +20,7 @@ export default function Infos({src, alt}) {
                 </div>
                 <div className="opening">
                     <h3>Consultation uniquement sur rendez-vous !</h3>
-                    <Image src={src} alt={alt} loading='lazy'/>
+                    <Image src={src} alt={alt} width={700} height={400} loading='lazy'/>
                 </div>
                 
             </div>

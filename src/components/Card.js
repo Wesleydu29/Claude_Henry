@@ -6,8 +6,16 @@ export default function Card({ src, title, alt, content, color }) {
     return(
         <div className="card">
             <div className="card-inner">
-                <div className="card-front">
-                    <Image src={src} alt={alt}/>
+                <div className="card-front" >
+                    <div style={{ position: "relative", width: "100%", height: "250px" }}>
+                        <Image
+                            src={src}
+                            alt={alt}
+                            fill
+                            style={{ objectFit: "cover" }}
+                            sizes="(max-width: 768px) 100vw, 400px"
+                        />
+                    </div>
                     <div className="card-content">
                         <h3>{title}</h3>
                         <p>découvrir</p>
