@@ -4,6 +4,7 @@ const plage = "/assets/plage.webp";
 import ScrollToTop from "@/components/ScrollBtn";
 import ListeAvis from "@/components/ListAvis";
 import { Metadata } from "next";
+import SchemaLocalBusiness from "@/components/SchemaLocalBusiness";
 
 export const metadata = {
   title: "Page d'accueil | Claude Henry - Hypnopraticien",
@@ -31,6 +32,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <div>
+      <SchemaLocalBusiness/>
       <Banner
         title="Claude Henry"
         content="Hypnopraticien"

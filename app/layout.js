@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import './globals.css'
+import Analytics from '@/components/Analytics'
 import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({
@@ -19,6 +20,8 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <Analytics/>
       </head>
       <body>
         <Header />
