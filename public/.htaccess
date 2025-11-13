@@ -1,13 +1,18 @@
-# Active la réécriture d'URL
-RewriteEngine On
-
-# Désactive le listing des répertoires
 Options -Indexes
-
-# Utilise index.html comme fichier par défaut
 DirectoryIndex index.html
 
-# Si le fichier ou le dossier n'existe pas, redirige vers index.html
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteEngine On
+
+# Supprime le trailing slash (sauf pour la racine)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [L]
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]
+
+# Redirige les URLs avec .html vers les URLs propres
+RewriteCond %{THE_REQUEST} ^GET\ /([^.\s]*\.html)
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+# Redirige vers les fichiers .html en interne (sans changer l'URL)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
