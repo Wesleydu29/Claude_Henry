@@ -9,7 +9,7 @@ import SchemaLocalBusiness from "@/components/SchemaLocalBusiness";
 export const metadata = {
   title: "Page d'accueil | Claude Henry - Hypnopraticien",
   description:
-    "Claude Henry - Hypnopraticien à Saint-Yvi, spécialiste en hypnose médicale et clinique, ainsi qu’en évaluation et traitement de la douleur.",
+    "Claude Henry - Hypnopraticien à Saint-Yvi, Quimper et Elliant, spécialiste en hypnose médicale et clinique, ainsi qu’en évaluation et traitement de la douleur.",
   keywords:
     "Claude, Henry, hypnopraticien, hypnothérapeute, hypnothérapie, hypnose, Saint-Yvi, Quimper, Elliant, Fouesnant, tabac, addictions, troubles, émotions, sommeil, phobies, douleur, alimentation, confiance en soi",
   robots: "index, follow",

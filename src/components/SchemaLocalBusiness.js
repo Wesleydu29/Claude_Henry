@@ -23,10 +23,32 @@ export default function SchemaLocalBusiness() {
             postalCode: "29140",
             addressCountry: "FR",
           },
+          areaServed: [
+            {
+              "@type": "City",
+              name: "Saint-Yvi",
+            },
+            {
+              "@type": "City",
+              name: "Quimper",
+            },
+            {
+              "@type": "City",
+              name: "Elliant",
+            },
+            {
+              "@type": "City",
+              name: "Concarneau",
+            },
+            {
+              "@type": "City",
+              name: "Fouesnant",
+            },
+          ],
           openingHours: "Mo-Fr 09:00-18:00",
           priceRange: "50€ - 60€",
           description:
-            "Claude Henry, hypnopraticien à Saint-Yvi, spécialiste en hypnose médicale et clinique et également évaluation et traitement de la douleur.",
+            "Claude Henry, hypnopraticien à Saint-Yvi, Quimper et Elliant, spécialiste en hypnose médicale et clinique et également évaluation et traitement de la douleur.",
         }),
       }}
     />
