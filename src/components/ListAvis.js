@@ -66,7 +66,7 @@ export default function ListeAvis() {
             )}
 
             {avisList.length === 0 ? (
-                <p>Aucun avis pour le moment.</p>
+                <p>Chargement des avis...</p>
             ) : (
                 <div className="carousel-container">
                     <AnimatePresence mode="wait">
