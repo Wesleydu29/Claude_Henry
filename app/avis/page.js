@@ -2,7 +2,7 @@ import AvisForm from "@/components/AvisForm";
 
 export const metadata = {
   title: "Laisser un avis | Claude Henry - Hypnopraticien",
-  description: "Donnez votre avis sur Claude Henry, hypnopraticien à Saint-Yvi.",
+  description: "Donnez votre avis, après votre séance d'hypnose effectuée en cabinet ou à domicile avec Claude Henry, hypnoprathérapeute à Saint-Yvi.",
   keywords: "Claude, Henry, hypnopraticien, avis",
   robots: "index, follow",
 };

@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: 'Claude Henry - Hypnopraticien',
-  description: 'Hypnothérapie à [votre ville]',
+  description: 'Hypnothérapie à Saint Yvi, Quimper et Elliant',
 }
 
 export default function RootLayout({ children }) {

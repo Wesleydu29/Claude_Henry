@@ -7,7 +7,7 @@ import '@/styles/Apropos.scss'
 
 export const metadata = {
   title: "À propos | Claude Henry - Hypnopraticien",
-  description: "En savoir plus sur Claude Henry, hypnopraticien à Saint-Yvi.",
+  description: "Découvrez en davantage concernant votre hypnothérapeute Claude Henry, ses domaines d'intervention, son parcours, ses diplômes et autres certifications.",
   keywords: "Claude, Henry, hypnopraticien, à propos",
   robots: "index, follow",
 };

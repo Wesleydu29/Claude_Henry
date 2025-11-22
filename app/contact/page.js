@@ -5,7 +5,7 @@ const island = '/assets/island.webp'
 
 export const metadata = {
   title: "Contact | Claude Henry - Hypnopraticien",
-  description: "Contactez Claude Henry pour une consultation d'hypnose.",
+  description: "Prenez rendez-vous avec Claude Henry, hypnopraticien à Saint-Yvi près de Quimper. Consultations en hypnose médicale et clinique pour le traitement de la douleur et l'accompagnement thérapeutique.",
   keywords: "Claude, Henry, hypnopraticien, contact",
   robots: "index, follow",
   metadataBase: new URL("https://www.claude-henry-hypnopraticien.fr"),
