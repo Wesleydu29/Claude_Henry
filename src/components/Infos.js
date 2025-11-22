@@ -1,5 +1,6 @@
 import '@/styles/Infos.scss'
 import Image from "next/image";
+import Maps from '@components/Maps'
 
 export default function Infos({src, alt}) {
     return(
@@ -20,9 +21,8 @@ export default function Infos({src, alt}) {
                 </div>
                 <div className="opening">
                     <h3>Consultation uniquement sur rendez-vous !</h3>
-                    <Image src={src} alt={alt} width={700} height={400} loading='lazy'/>
+                    <Maps/>
                 </div>
-                
             </div>
         </div>
     );

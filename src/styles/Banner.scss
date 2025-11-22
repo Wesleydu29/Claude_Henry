@@ -1,15 +1,17 @@
 
 .banner {
     position: relative;
-    height: 300px; 
-    background-position: center;
+    height: 350px; 
     background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    border-radius: 5px;
+    overflow: hidden;
+    img {
+    object-fit: cover;
+    object-position: center 50%;  // Ajuste ici
+  }
     @media (max-width: 480px) {
         display: none;
     }

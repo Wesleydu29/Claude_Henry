@@ -1,7 +1,6 @@
 import Infos from "@/components/Infos";
 import Banner from "@/components/Banner";
-const géolocalisation = '/assets/geolocalisation.webp'
-const rivière = '/assets/rivière.webp'
+const island = '/assets/island.webp'
 
 
 export const metadata = {
@@ -24,19 +23,8 @@ export const metadata = {
 export default function Contact() {
     return(
         <div>
-            
-                <title> Contact | Claude Henry - hypnopraticien</title>
-                <meta name="description" content="Contactez Claude Henry, afin de prendre rendez-vous."/>
-                <meta name="robots" content="index, follow"/>
-                <meta property="og:title" content="Contact | Claude Henry - Hypnopraticien" />
-                <meta property="og:description" content="Contactez moi pour un rendez-vous" />
-                <meta property="og:image" content="https://www.monsite.com/assets/profil.webp" />
-                <meta property="og:url" content="https://www.claude-henry-hypnopraticien.fr/Contact" />
-            
-            <Banner backgroundImage={rivière} alt="image d'un paysage avec des montagnes"/>
-            <Infos src={géolocalisation} alt="géolocalisation du lieu du cabinet"/>
-            
-
+            <Banner backgroundImage={island} alt="image d'un paysage avec des montagnes"/>
+            <Infos/>
         </div>
     );
 };
