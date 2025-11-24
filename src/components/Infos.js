@@ -17,7 +17,7 @@ export default function Infos({src, alt}) {
                 </div>
                 <div className="localisation">
                     <i className="fa-solid fa-house"></i>
-                    <p>Linguennec 29140 Saint Yvy</p>
+                    <p>Linguennec 29140 Saint Yvi</p>
                 </div>
                 <div className="opening">
                     <h3>Consultation uniquement sur rendez-vous !</h3>
